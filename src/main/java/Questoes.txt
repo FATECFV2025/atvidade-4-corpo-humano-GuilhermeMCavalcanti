@@ -1,0 +1,14 @@
+Questão 1 - Incluindo a linha c1.massa = "2" após instanciar o objeto c1:
+
+Ocorrência: Essa nova linha tenta alterar o valor de massa diretamente, mas não consegue.
+Conclusão: Já que massa é um valor privado, ela não pode ser acessada diretamente, por isso é impossível alterá-la dessa forma. Para isso é necessário o método setter.
+
+Questão 2 - Mudando a linha private float Massa para public float Massa:
+
+Ocorrência: A linha c1.massa = "2" agora possui permissão para alterar o valor de massa.
+Conclusão: Ao alterar o modificador de acesso para public, é possível alterar o valor de massa, porém o tipo de dado provido é diferente do que é aceito. Nesse caso, c1.massa tenta inserir uma String como valor, mas massa é do tipo float.
+
+Questão 3 - Alterando a linha public setVolume(float v) para private setVolume(float v):
+
+Ocorrência: O modificador de acesso foi alterado, impedindo outras classes de usarem o método.
+Conclusão: Com essa alteração, é possível notar que o uso do método setVolume não funciona mais na classe Main pois ela não possui mais a permissão. Na classe CorpoHumano, também não há nenhum uso local para o método também, anulando-o.
