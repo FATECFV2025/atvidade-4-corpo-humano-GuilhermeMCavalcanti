@@ -18,10 +18,12 @@ public class App {
         CorpoHumano c1 = new CorpoHumano(massa, volume, densidade, altura);
         c1.massa = "2"; 
         //Questão 1
-        //Está dando erro pois massa é private e não pode ser acessada dessa forma
+        //Ocorrência: Essa nova linha tenta alterar o valor de massa diretamente, mas não consegue.
+        //Conclusão: Já que massa é um valor privado, ela não pode ser acessada diretamente, por isso é impossível alterá-la dessa forma. Para isso é necessário o método setter.
 
         //Questão 2
-        //Agora massa pode ser acessada já que é public, mas o 2 nesse caso está como String, tendo uma disparidade com o tipo de dado (float)
+        //Ocorrência: A linha c1.massa = "2" agora possui permissão para alterar o valor de massa.
+        //Conclusão: Ao alterar o modificador de acesso para public, é possível alterar o valor de massa, porém o tipo de dado provido é diferente do que é aceito. Nesse caso, c1.massa tenta inserir uma String como valor, mas massa é do tipo float.
 
 
         System.out.println("=== VALORES INICIAIS ===");
@@ -33,7 +35,8 @@ public class App {
 
         c1.setVolume(10);
         //Questão 3
-        //Por estar privada, não é possível utilizar o método nessa classe
+        //Ocorrência: O modificador de acesso foi alterado, impedindo outras classes de usarem o método.
+        //Conclusão: Com essa alteração, é possível notar que o uso do método setVolume não funciona mais na classe Main pois ela não possui mais a permissão. Na classe CorpoHumano, também não há nenhum uso local para o método também, anulando-o.
 
         while (true) {
         System.out.printf("Digite uma nova massa: ");
